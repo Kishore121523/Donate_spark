@@ -1,0 +1,98 @@
+body {
+  margin-top: 78px;
+}
+
+.cyan {
+  color: rgb(24, 147, 163);
+}
+
+.donateText {
+  font-weight: 500;
+  color: rgb(51, 45, 45);
+}
+
+.donate {
+  font-size: 1.8rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.donateimg {
+  height: 90%;
+}
+.donateimgcont {
+  margin-top: 5%;
+}
+.donatebtn {
+  width: 20rem;
+}
+
+.help {
+  color: rgb(255, 255, 255);
+}
+
+.navbar {
+  box-shadow: 2px 2px 5px #3292a6;
+  opacity: 0.9;
+  background: #fff;
+}
+.navbar .nav-item {
+  font-size: 1.2rem;
+  padding-right: 1.4rem;
+}
+
+#showcase {
+  position: relative;
+  background: url(../image/donatebg.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 600px;
+}
+#showcase .primary-overlay {
+  background: rgba(38, 39, 39, 0.8);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.info-header {
+  width: 50%;
+  margin: auto;
+  border-bottom: 1px #ddd solid;
+}
+
+#accordion {
+  cursor: pointer;
+}
+
+#volunteer img {
+  margin-top: -50px;
+}
+.volunteerRole {
+  color: #3d3f3f;
+}
+.volunteerRole:hover {
+  color: white;
+}
+#volunteer .card:hover {
+  background: #3292a6;
+  color: #fff;
+}
+#volunteer .fab {
+  color: white;
+}
+
+@media (max-width: 768px) {
+  #showcase {
+    min-height: 500px;
+  }
+  #showcase h1 {
+    font-size: 4rem;
+  }
+
+  .mb-resp {
+    margin-bottom: 1rem;
+  }
+}
