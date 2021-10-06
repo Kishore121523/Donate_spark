@@ -2,8 +2,18 @@ body {
   margin-top: 78px;
 }
 
+.bgg-cyan {
+  background-color: rgb(31, 170, 189);
+}
+.btn-cyan {
+  background-color: rgb(31, 170, 189);
+}
+.brd-cyan {
+  border: 1px solid rgb(31, 170, 189);
+}
+
 .cyan {
-  color: rgb(24, 147, 163);
+  color: rgb(31, 170, 189);
 }
 
 .donateText {
@@ -15,7 +25,6 @@ body {
   font-size: 1.8rem;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-
 .donateimg {
   height: 90%;
 }
@@ -25,7 +34,6 @@ body {
 .donatebtn {
   width: 20rem;
 }
-
 .help {
   color: rgb(255, 255, 255);
 }
