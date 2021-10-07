@@ -26,8 +26,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./css/styles.css" />
-    <title>DFS</title>
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <title>Don-Spark</title>
   </head>
 
   <body id="home" data-spy="scroll" data-target="#mai-nav">
@@ -73,18 +72,24 @@
         <div class="container">
           <div class="row">
             <div class="col-lg-6 text-center">
-              <h1 class="display-2 mt-5 pt-2 font-weight-bold">
-                We Rise by Lifting Others
+              <h1 class="display-2 mt-5 pt-2 donate-head">
+                Food for People, Not for Profit
               </h1>
-              <p class="lead mt-3">
+              <p class="lead mt-2 text-warning">
                 We Make A Living By What We Get. We Make a Life By What We Give!
               </p>
-              <button
-                id="rzp-button1"
-                class="btn btn-warning btn-lg btn-block mt-4 donateText"
+              <a
+                href="https://rzp.io/l/SxKfsTrq"
+                target="_blank"
+                class="text-decoration-none text-dark"
               >
-                DONATE NOW
-              </button>
+                <button
+                  id="rzp-button1"
+                  class="btn btn-warning btn-lg btn-block mt-4 donateText"
+                >
+                  DONATE NOW
+                </button></a
+              >
             </div>
             <div class="col-lg-6 donateimgcont">
               <img
@@ -267,7 +272,7 @@
         <div class="row">
           <div class="col">
             <div class="info-header mb-5">
-              <h1 class="cyan pb-3">Meet Our Volunteers</h1>
+              <h1 class="cyan display-4 pb-2">Meet Our Volunteers</h1>
               <p class="lead">
                 Thank you for being the reason for Someone's Smile.
               </p>
@@ -275,7 +280,7 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-lg-3 col-md-6">
+          <div class="col-lg-3 col-md-6 mb-resp">
             <div class="card">
               <div class="card-body">
                 <img
@@ -309,7 +314,7 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-3 col-md-6">
+          <div class="col-lg-3 col-md-6 mb-resp">
             <div class="card">
               <div class="card-body">
                 <img
@@ -343,7 +348,7 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-3 col-md-6">
+          <div class="col-lg-3 col-md-6 mb-resp">
             <div class="card">
               <div class="card-body">
                 <img
@@ -377,7 +382,7 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-3 col-md-6">
+          <div class="col-lg-3 col-md-6 mb-resp">
             <div class="card">
               <div class="card-body">
                 <img
@@ -420,12 +425,14 @@
       <div class="container">
         <div class="row mx-auto">
           <div class="col-md-12 text-center">
-            <button
-              id="rzp-button2"
-              class="btn btn-warning btn-lg donatebtn donateText"
+            <a
+              href="https://rzp.io/l/SxKfsTrq"
+              target="_blank"
+              class="text-decoration-none text-dark"
+              ><button class="btn btn-warning btn-lg donatebtn donateText">
+                DONATE NOW
+              </button></a
             >
-              DONATE NOW
-            </button>
           </div>
         </div>
       </div>
@@ -436,19 +443,24 @@
       <div class="container text-center">
         <div class="row">
           <div class="col-lg-12">
-            <h3>Get In Touch With Us</h3>
+            <h1 class="display-2">Get In Touch With Us</h1>
             <p class="lead">
               Send us your queries and we will get in touch with you as soon as
               possible!
             </p>
-            <form>
+            <form id="myForm">
               <div class="input-group input-group-lg mb-3">
                 <div class="input-group-prepend">
                   <span class="input-group-text">
                     <i class="fas fa-user"> </i>
                   </span>
                 </div>
-                <input type="text" placeholder="Name" class="form-control" />
+                <input
+                  type="text"
+                  placeholder="Name"
+                  class="form-control"
+                  id="name"
+                />
               </div>
               <div class="input-group input-group-lg mb-3">
                 <div class="input-group-prepend">
@@ -468,12 +480,14 @@
                   class="form-control"
                   placeholder="Message"
                   rows="5"
+                  id="message"
                 ></textarea>
               </div>
               <input
                 type="submit"
                 value="Submit"
                 class="btn btn-cyan btn-lg btn-block text-white"
+                onclick="sendMail(); return false"
               />
             </form>
           </div>
@@ -482,9 +496,9 @@
     </section>
 
     <!-- Footer -->
-    <footer id="main-footer" class="py-3 bgg-cyan text-white">
+    <footer id="main-footer" class="py-1 bgg-cyan text-white">
       <div class="container">
-        <div class="text-center pt-2">
+        <div class="text-center pt-3">
           <p class="lead">Copyrights &copy;<span id="year"></span></p>
         </div>
       </div>
@@ -494,6 +508,7 @@
       integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
       crossorigin="anonymous"
     ></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script
@@ -513,25 +528,19 @@
       crossorigin="anonymous"
     ></script>
 
-    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-    <script>
+    <!-- <script src="https://checkout.razorpay.com/v1/checkout.js"></script> -->
+    <!-- <script>
       var options = {
-        key: "rzp_test_LMzxtBAs6nzGbu",
-        amount: "500",
+        key: "rzp_test_ICFnUcfIYG2yNv",
+        amount: "50000",
         currency: "INR",
         name: "Acme Corp",
         description: "Test Transaction",
         image: "https://example.com/your_logo",
-        order_id: "order_I5yPlGYZtnanWP",
+        order_id: "order_I6JnrGcjcl4vXI",
 
         handler: function (response) {
-          // alert(response.razorpay_payment_id);
-          // alert(response.razorpay_order_id);
-          // alert(response.razorpay_signature);
-          // alert(
-          //   "Amount: " + options.amount.substring(0, options.amount.length - 2)
-          // );
-          sendMail();
+          sendInvoice(response);
         },
         prefill: {
           name: "Kishore",
@@ -545,19 +554,26 @@
           color: "#3399cc",
         },
       };
-      function sendMail() {
+      function sendInvoice(response) {
         Email.send({
-          Host: "smtp.elasticemail.com",
-          Username: "sparksdonation123@gmail.com",
-          Password: "D20520051D0B730C0D7A76DB17C6ACDAFB7C",
-          // SecureToken: "b034c714-3329-4ccf-9939-a69d82d7dca5",
+          // Host: "smtp.gmail.com",
+          // Username: "sparksdonation123@gmail.com",
+          // Password: "yoggaykis989",
+          SecureToken: "d6b8a44d-a085-4eb9-87fe-4b27c356bb89",
           To: "sparksdonation441@gmail.com",
           From: "sparksdonation123@gmail.com",
-          Subject: "This is the subject",
-          Body: "And this is the body",
-        }).then((message) => alert(message));
+          Subject: "INVOICE",
+          Body:
+            "Payment Id -  " +
+            response.razorpay_payment_id +
+            "Order Id -    " +
+            response.razorpay_order_id +
+            "Signature Id - " +
+            response.razorpay_signature +
+            "Amount Id -  " +
+            options.amount.substring(0, options.amount.length - 2),
+        }).then(alert("Check your Mail for the Invoice"));
       }
-
       var rzp1 = new Razorpay(options);
       rzp1.on("payment.failed", function (response) {
         alert(response.error.code);
@@ -576,9 +592,21 @@
         rzp1.open();
         e.preventDefault();
       };
-    </script>
+    </script> -->
 
     <script>
+      function sendMail() {
+        Email.send({
+          // Host: "smtp.gmail.com",
+          // Username: "sparksdonation123@gmail.com",
+          // Password: "yoggaykis989",
+          SecureToken: "d6b8a44d-a085-4eb9-87fe-4b27c356bb89",
+          To: "sparksdonation441@gmail.com",
+          From: "sparksdonation123@gmail.com",
+          Subject: `Sender Name - ${document.getElementById("name").value}`,
+          Body: `${document.getElementById("message").value}`,
+        }).then((message) => alert(message));
+      }
       // Get the current year for copyright
       $("#year").text(new Date().getFullYear());
 
@@ -600,7 +628,7 @@
             {
               scrollTop: $(hash).offset().top,
             },
-            1400,
+            1100,
             function () {
               // Add hash to URL after scroll
               window.location.hash = hash;
