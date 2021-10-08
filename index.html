@@ -468,7 +468,12 @@
                     <i class="fas fa-envelope"> </i>
                   </span>
                 </div>
-                <input type="text" placeholder="Email" class="form-control" />
+                <input
+                  type="text"
+                  id="email"
+                  placeholder="Email"
+                  class="form-control"
+                />
               </div>
               <div class="input-group input-group-lg mb-3">
                 <div class="input-group-prepend">
@@ -528,84 +533,18 @@
       crossorigin="anonymous"
     ></script>
 
-    <!-- <script src="https://checkout.razorpay.com/v1/checkout.js"></script> -->
-    <!-- <script>
-      var options = {
-        key: "rzp_test_ICFnUcfIYG2yNv",
-        amount: "50000",
-        currency: "INR",
-        name: "Acme Corp",
-        description: "Test Transaction",
-        image: "https://example.com/your_logo",
-        order_id: "order_I6JnrGcjcl4vXI",
-
-        handler: function (response) {
-          sendInvoice(response);
-        },
-        prefill: {
-          name: "Kishore",
-          email: "yourEmail@gmail.com",
-          contact: "737219696",
-        },
-        notes: {
-          address: "Razorpay Corporate Office",
-        },
-        theme: {
-          color: "#3399cc",
-        },
-      };
-      function sendInvoice(response) {
-        Email.send({
-          // Host: "smtp.gmail.com",
-          // Username: "sparksdonation123@gmail.com",
-          // Password: "yoggaykis989",
-          SecureToken: "d6b8a44d-a085-4eb9-87fe-4b27c356bb89",
-          To: "sparksdonation441@gmail.com",
-          From: "sparksdonation123@gmail.com",
-          Subject: "INVOICE",
-          Body:
-            "Payment Id -  " +
-            response.razorpay_payment_id +
-            "Order Id -    " +
-            response.razorpay_order_id +
-            "Signature Id - " +
-            response.razorpay_signature +
-            "Amount Id -  " +
-            options.amount.substring(0, options.amount.length - 2),
-        }).then(alert("Check your Mail for the Invoice"));
-      }
-      var rzp1 = new Razorpay(options);
-      rzp1.on("payment.failed", function (response) {
-        alert(response.error.code);
-        alert(response.error.description);
-        alert(response.error.source);
-        alert(response.error.step);
-        alert(response.error.reason);
-        alert(response.error.metadata.order_id);
-        alert(response.error.metadata.payment_id);
-      });
-      document.getElementById("rzp-button1").onclick = function (e) {
-        rzp1.open();
-        e.preventDefault();
-      };
-      document.getElementById("rzp-button2").onclick = function (e) {
-        rzp1.open();
-        e.preventDefault();
-      };
-    </script> -->
-
     <script>
       function sendMail() {
         Email.send({
           // Host: "smtp.gmail.com",
           // Username: "sparksdonation123@gmail.com",
           // Password: "yoggaykis989",
-          SecureToken: "d6b8a44d-a085-4eb9-87fe-4b27c356bb89",
-          To: "sparksdonation441@gmail.com",
-          From: "sparksdonation123@gmail.com",
+          SecureToken: "b9409e6f-9fd5-47cd-b3ee-6f7c0ad00783",
+          To: "contactkishorework@gmail.com",
+          From: `${document.getElementById("email").value}`,
           Subject: `Sender Name - ${document.getElementById("name").value}`,
           Body: `${document.getElementById("message").value}`,
-        }).then((message) => alert(message));
+        }).then(() => alert("Email Sent Successfully"));
       }
       // Get the current year for copyright
       $("#year").text(new Date().getFullYear());
